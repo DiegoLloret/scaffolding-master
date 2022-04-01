@@ -38,13 +38,14 @@ class PeliculaControllerTest {
                 .andExpect(status().isOk());
     }
 
-/*
+
     @Test
     void insertarPelicula() throws Exception{
-        mockMvc.perform((get("/addPelicula")).contentType("application/json"))
+        mockMvc.perform((get("/addPelicula/{titulo}/{genero}/{anio}/{oscar}/{actores}","hola","hola",1,1,"ergwrtg"))
+                        .contentType("application/json"))
                 .andExpect(status().isOk());
     }
-*/
+
     @Test
     void verPelicula() throws Exception{
         mockMvc.perform((get("/verPelicula/{id}",2)).contentType("application/json"))

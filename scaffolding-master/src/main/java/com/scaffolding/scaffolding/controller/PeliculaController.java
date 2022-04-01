@@ -25,8 +25,8 @@ public class PeliculaController {
     private PeliculaService peliculaService;
 
     // getmapping para añadir peliculas
-   @GetMapping("addPelicula")
-   public void insertarPelicula(String titulo,String genero,int anio,int oscar,String actores) {
+   @GetMapping("addPelicula/{titulo}/{genero}/{anio}/{oscar}/{actores}")
+   public void insertarPelicula(@PathVariable(value="titulo")String titulo,@PathVariable(value="genero")String genero,@PathVariable(value="anio")Integer anio,@PathVariable(value="oscar")Integer oscar,@PathVariable(value="actores")String actores) {
 
        peliculaService.addPelicula(new Pelicula(titulo, genero, anio, oscar, actores));
    }
